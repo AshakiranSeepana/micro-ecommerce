@@ -1,0 +1,28 @@
+<div>
+  @if (router.url === '/') {
+  <div>
+  <nav class="navbar">
+    <div class="logo">
+      <a routerLink="/">MyShop</a>
+    </div>
+    <ul class="nav-links">
+      <li><a routerLink="/" routerLinkActive="active" onclick="getRouting('home')">Home</a></li>
+      <li><a routerLink="/products" routerLinkActive="active" onclick="getRouting('products')">Products</a></li>
+      <li><a routerLink="/about" routerLinkActive="active" onclick="getRouting('about')">About</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" onclick="getRouting('contact')">Contact</a></li>
+      <li><a routerLinkActive="active" (click)="getRouting('login')">Login</a></li>
+    </ul>
+  </nav>
+  <!-- Static banner -->
+  <div>
+    <img src="assets/images/banner.jpg" class="homepage-logo" alt="banner"/>
+  </div>
+  </div>
+}
+</div>
+
+<!-- Routed content -->
+<div class="container">
+  <router-outlet></router-outlet>
+  
+</div>

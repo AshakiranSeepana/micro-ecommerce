@@ -1,0 +1,46 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="login-title">Welcome Back 👋</h2>
+    <p class="login-subtitle">Login to continue</p>
+
+    <form [formGroup]="form" (ngSubmit)="loginSubmit()">
+      <div class="form-group">
+        <label for="userName">Username</label>
+        <input id="userName" type="text" formControlName="userName" placeholder="Enter your username" />
+       @if(form.controls.userName.touched && form.controls.userName.errors){
+          <small>
+          @if (form.controls.userName.errors['required']) {
+             <span>Username is required</span>
+          }
+         @if (form.controls.userName.errors['minlength']) {
+            <span>Min 5 chars</span>
+         }        
+        </small>
+       }
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" placeholder="Enter your password" />
+        @if(form.controls.password.touched && form.controls.password.errors){
+        <small>
+          @if (form.controls.password.errors['required']) {
+             <span>Password is required</span>
+          }
+          @if(form.controls.password.errors['minlength']){
+           <span>Min 4 chars</span>
+          }
+         
+        </small>
+      }
+      </div>
+
+      <button type="submit" class="btn-primary" [disabled]="(form.controls.userName.touched && form.controls.userName.errors)
+            || (form.controls.password.touched && form.controls.password.errors)">Login</button>
+    </form>
+
+    <p class="register-text">
+      Don’t have an account? <a routerLink="/register">Register here</a>
+    </p>
+  </div>
+</div>
