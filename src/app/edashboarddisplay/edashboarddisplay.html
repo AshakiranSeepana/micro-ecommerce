@@ -1,1 +1,55 @@
-<p>edashboarddisplay works!</p>
+<div class="dashboard-container">
+  <!-- Header -->
+  <app-header></app-header>
+
+  <!-- Sidebar + Content -->
+  <div class="main-layout">
+    <app-sidebar></app-sidebar>
+
+    <!-- Middle Dashboard Content -->
+    <main class="content">
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="card stat">
+          <h3>🛒 Orders</h3>
+          <p class="number">1,245</p>
+          <span class="trend up">+12%</span>
+        </div>
+        <div class="card stat">
+          <h3>📦 Products</h3>
+          <p class="number">320</p>
+          <span class="trend">Stable</span>
+        </div>
+        <div class="card stat">
+          <h3>👥 Customers</h3>
+          <p class="number">856</p>
+          <span class="trend up">+8%</span>
+        </div>
+        <div class="card stat">
+          <h3>💰 Revenue</h3>
+          <p class="number">$24,560</p>
+          <span class="trend down">-3%</span>
+        </div>
+      </div>
+
+      <!-- Widgets -->
+      <div class="widgets-grid">
+        <div class="card large">
+          <h3>📈 Sales Overview</h3>
+          <div class="chart-placeholder">[Chart will go here]</div>
+        </div>
+        <div class="card">
+          <h3>📝 Recent Orders</h3>
+          <ul class="orders-list">
+            <li>Order #1001 – John Doe – $250</li>
+            <li>Order #1002 – Mary Jane – $120</li>
+            <li>Order #1003 – Alex Roy – $560</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Chatbot fixed at bottom -->
+  <app-chatbot-doc class="chatbot-widget"></app-chatbot-doc>
+</div>

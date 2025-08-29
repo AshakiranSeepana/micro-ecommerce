@@ -1,0 +1,29 @@
+<!-- layout.component.html -->
+<div class="layout">
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">MyApp</div>
+    <nav class="top-nav">
+      <a routerLink="/dashboard">Dashboard</a>
+      <a routerLink="/profile">Profile</a>
+      <a routerLink="/settings">Settings</a>
+    </nav>
+  </header>
+
+  <div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li><a routerLink="/dashboard" routerLinkActive="active">🏠 Dashboard</a></li>
+        <li><a routerLink="/reports" routerLinkActive="active">📊 Reports</a></li>
+        <li><a routerLink="/users" routerLinkActive="active">👤 Users</a></li>
+        <li><a routerLink="/settings" routerLinkActive="active">⚙️ Settings</a></li>
+      </ul>
+    </aside>
+
+    <!-- Page Content -->
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
