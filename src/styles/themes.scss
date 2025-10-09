@@ -1,0 +1,56 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+// --- Light Theme ---
+$light-primary: mat-palette($mat-indigo);
+$light-accent: mat-palette($mat-pink, A200, A100, A400);
+$light-warn: mat-palette($mat-red);
+
+$light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+
+// --- Dark Theme ---
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent: mat-palette($mat-amber, A200, A100, A400);
+$dark-warn: mat-palette($mat-deep-orange);
+
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+// --- Light Theme Class ---
+.light-theme {
+  @include angular-material-theme($light-theme);
+
+  // Background for the app
+  body, .app-container {
+    background-color: mat-color($light-primary, 50);
+    color: mat-color($light-primary, 900);
+  }
+
+  // CTA Button styling
+  .cta-button {
+    background-color: mat-color($light-accent, 500);
+    color: mat-color($light-accent, 50);
+    &:hover {
+      background-color: mat-color($light-accent, 700);
+    }
+  }
+}
+
+// --- Dark Theme Class ---
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+
+  // Background for the app
+  body {
+    background-color: black;
+    color: mat-color($dark-primary, 50);
+  }
+
+  // CTA Button styling
+  .cta-button {
+    background-color: mat-color($dark-accent, 500);
+    color: mat-color($dark-accent, 900);
+    &:hover {
+      background-color: mat-color($dark-accent, 700);
+    }
+  }
+}

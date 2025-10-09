@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-chatbot-doc',
   imports: [],
   templateUrl: './chatbot-doc.html',
-  styleUrl: './chatbot-doc.scss'
+  styleUrl: './chatbot-doc.scss',
+  standalone:true
 })
 export class ChatbotDoc {
 
